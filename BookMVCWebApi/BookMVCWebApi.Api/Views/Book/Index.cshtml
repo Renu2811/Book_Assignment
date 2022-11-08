@@ -1,0 +1,83 @@
+﻿@model IEnumerable<BookMVCWebApi.Api.Models.BookViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="background-color:rosybrown">
+    </div>
+    
+
+<h1 style="color:purple;">List Of Books</h1>
+
+
+    <a  style="color:darkgreen;" asp-action="Create"><strong>Add New Book</strong></a>
+
+
+
+<form asp-action="Search">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-7">
+            <input type="search" name="searchString" class="form-control"/>
+        </div>
+        <div class="col-md-1">
+            <input type="submit" value="Search" class="btn btn-outline-warning"/>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</form>
+<br />
+
+<div class="row">
+    @foreach(var item in Model)
+    {
+    <div class="col-md-3 "style="padding-bottom:30px">
+        
+        <p><img class="cen"src="/BookImage/@item.bookImage" width="200px" height="200px" />
+        
+        <div class="row">
+        <div class="col-sm-12">
+       <h5  style="color:black">Name:@item.bookName</h5> <br>
+      <h5  style="color:black">Zoner: @item.bookZoner</h5><br/>
+      <h5 style="color:black">cost: @item.cost</h5><br/></div></div></p>
+        <a asp-action="Edit" asp-route-Id="@item.bookId" class="btn btn-outline-primary" >Edit </a>|
+        @*<a asp-action="Details" asp-route-Id="@item.bookId" class="btn btn-outline-dark">Details </a>|*@
+
+        <br/>
+        <br/>
+
+<header>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("p").click(function(){
+    alert("Are you Sure?");
+  });
+});
+</script>
+</header>
+<body>
+
+<p>
+      <a asp-action="Delete" asp-route-Id="@item.bookId" class="btn btn-outline-danger" >Delete</a>
+</p>
+
+
+</body>
+
+       
+
+    </div>
+        
+    }   
+
+</div>
+
+
+
+        
+
+          
+             

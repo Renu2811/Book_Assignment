@@ -1,0 +1,63 @@
+﻿@model BookMVCWebApi.Api.Models.BookViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="background-color:rosybrown">
+
+
+<h1>Create</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           @* <div class="form-group">
+                <label asp-for="bookId" class="control-label"></label>
+                <input asp-for="bookId" class="form-control" />
+                <span asp-validation-for="bookId" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="bookName" class="control-label"></label>
+                <input asp-for="bookName" class="form-control" />
+                <span asp-validation-for="bookName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="bookZoner" class="control-label"></label>
+                <input asp-for="bookZoner" class="form-control" />
+                <span asp-validation-for="bookZoner" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="relaseDate" class="control-label"></label>
+                <input asp-for="relaseDate" class="form-control" />
+                <span asp-validation-for="relaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cost" class="control-label"></label>
+                <input asp-for="cost" class="form-control" />
+                <span asp-validation-for="cost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="bookImage" class="control-label"></label>
+                <input type="file" asp-for="bookImage" class="form-control" />
+                <span asp-validation-for="bookImage" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <input  type="submit" value="Create" asp-action="CreateBook" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

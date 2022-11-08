@@ -1,0 +1,106 @@
+﻿@model BookMVCWebApi.Api.Models.BookViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div>
+    <h4>Book Details</h4>
+    <br />
+</div>
+
+    <div class="row container"> 
+        <div class="col-md-5">
+            <img src="/BookImage/@Model.bookImage" width="250px" height="300px"/>
+        </div>
+        
+        <div class="col-md-7" style="padding-bottom">
+          <span style="font-family:Arial">
+              Book Id: @Model.bookId
+          </span> 
+            <br/>
+             <span style="font-family:Arial">
+              Book Name: @Model.bookName
+            </span>
+            <br/>
+             <span style="font-family:Arial">
+              Book Zoner: @Model.bookZoner
+              </span>
+            <br/>
+             <span style="font-family:Arial">
+               Book Cost : @Model.cost
+               </span>
+            <br/>
+            <span style="font-family:Arial">
+            Date :@Model.relaseDate
+            </span>
+            <br/>
+            <br/>
+            <br/>
+            <a asp-action="Index" class="btn btn-outline-primary">Back to List</a>
+            <a asp-action="Index" class="btn btn-outline-primary">Add to Cart</a>
+        </div>
+      
+    </div>
+
+    
+    @*<dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.bookId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.bookId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.bookName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.bookName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.bookZoner)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.bookZoner)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.relaseDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.relaseDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cost)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cost)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.bookImage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.bookImage)
+        </dd>
+    </dl>
+</div>
+    
+
+ <div class="row container">
+        <div class="col-md-5">
+            <p><img class="cen"src="/BookImage/@Model.bookImage" width="200px" height="200px" />
+        </div>
+ </div>
+
+        <div class="col-md-7" style="padding-bottom:20px">
+            <span style="font-size:50px">@Model.bookName</span><br />
+            <span style="font-size:25px"><strong style="font-size:30px">Description:</strong>Books play a quintessential role in everyone's' life by introducing them to a world of imagination, providing knowledge of the outside world, improving their reading, writing and speaking skills as well as boosting memory and intelligence..</span>
+        <br />
+
+
+        <a asp-action="Index" class="btn btn-outline-primary">Back to List</a>
+        </div> *@
+  
+
